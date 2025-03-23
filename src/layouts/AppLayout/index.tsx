@@ -3,8 +3,12 @@ import type {PropsWithChildren} from 'react'
 export function AppLayout({children}: PropsWithChildren) {
   return (
     <>
-      <header className="bg-blue-900 px-2 py-4 text-white">
-        <p>Love Movies</p>
+      <header className="bg-teal-800 py-3 text-white">
+        <div className="max-width-wrapper">
+          <p>
+            Love Movies <span aria-hidden="true">🎥</span>
+          </p>
+        </div>
       </header>
       <main>{children}</main>
     </>

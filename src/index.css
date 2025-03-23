@@ -1,1 +1,10 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+@layer components {
+  .max-width-wrapper {
+    @apply px-5;
+
+    max-width: 75rem;
+    margin: 0 auto;
+  }
+}

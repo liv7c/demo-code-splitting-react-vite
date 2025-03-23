@@ -1,11 +1,11 @@
-import { AppLayout } from "./layouts/AppLayout";
+import {AppLayout} from './layouts/AppLayout'
 
 function App() {
   return (
     <AppLayout>
       <h1>App</h1>
     </AppLayout>
-  );
+  )
 }
 
-export default App;
+export default App

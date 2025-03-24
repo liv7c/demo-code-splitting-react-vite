@@ -3,6 +3,8 @@ import Home from '../pages/Home'
 import About from '../pages/About'
 import {AppLayout} from '../layouts/AppLayout'
 import NotFound from '../pages/NotFound'
+import MovieDetails from '../pages/MovieDetails'
+import Movies from '../pages/Movies'
 
 export const router = createBrowserRouter([
   {
@@ -12,17 +14,27 @@ export const router = createBrowserRouter([
       {
         id: 'home',
         path: '/',
-        Component: Home,
+        element: <Home />,
       },
       {
         id: 'about',
         path: '/about',
-        Component: About,
+        element: <About />,
+      },
+      {
+        id: 'movies',
+        path: '/movies',
+        element: <Movies />,
+      },
+      {
+        id: 'movieDetail',
+        path: '/movies/:id',
+        element: <MovieDetails />,
       },
       {
         id: 'not-found',
         path: '*',
-        Component: NotFound,
+        element: <NotFound />,
       },
     ],
   },

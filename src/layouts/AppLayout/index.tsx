@@ -16,6 +16,11 @@ export function AppLayout() {
                 </NavLink>
               </li>
               <li>
+                <NavLink to="/movies" className="block p-4">
+                  Movies
+                </NavLink>
+              </li>
+              <li>
                 <NavLink to="/about" className="block p-4">
                   About
                 </NavLink>

@@ -1,5 +1,5 @@
 import {useQuery} from '@tanstack/react-query'
-import {fetchMovies} from '../api/movies'
+import {fetchMovie, fetchMovies} from '../api/movies'
 
 export const useMovies = () => {
   return useQuery({
@@ -8,5 +8,13 @@ export const useMovies = () => {
     select: (data) => {
       return data.results
     },
+  })
+}
+
+export const useMovie = (movieId: string) => {
+  return useQuery({
+    queryKey: ['movies', movieId],
+    queryFn: () => fetchMovie(movieId),
+    enabled: Boolean(movieId),
   })
 }

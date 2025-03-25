@@ -1,5 +1,5 @@
-import {FancyAnimation} from '../components/FancyAnimation'
 import {Modal} from '../components/Modal'
+import {FancyAnimation} from '../components/FancyAnimation'
 
 function About() {
   return (

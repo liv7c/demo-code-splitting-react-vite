@@ -2,6 +2,8 @@ import {createBrowserRouter} from 'react-router'
 import Home from '../pages/Home'
 import {AppLayout} from '../layouts/AppLayout'
 import {lazy} from 'react'
+import {queryClient} from '../queryClient'
+import {movieDetailsLoader} from '../pages/MovieDetails/loader'
 
 const About = lazy(() => import('../pages/About'))
 const NotFound = lazy(() => import('../pages/NotFound'))
@@ -31,6 +33,7 @@ export const router = createBrowserRouter([
       {
         id: 'movieDetail',
         path: '/movies/:id',
+        loader: movieDetailsLoader(queryClient),
         element: <MovieDetails />,
       },
       {

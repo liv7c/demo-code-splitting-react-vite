@@ -1,6 +1,7 @@
 import {Suspense} from 'react'
 import {NavLink, Outlet} from 'react-router'
 import {Loader} from '../../components/Loader'
+import {ErrorBoundary} from 'react-error-boundary'
 
 export function AppLayout() {
   return (
@@ -33,9 +34,11 @@ export function AppLayout() {
       </header>
       <main>
         <div className="max-width-wrapper py-6">
-          <Suspense fallback={<Loader />}>
-            <Outlet />
-          </Suspense>
+          <ErrorBoundary fallback={<p>⚠️Something went wrong</p>}>
+            <Suspense fallback={<Loader />}>
+              <Outlet />
+            </Suspense>
+          </ErrorBoundary>
         </div>
       </main>
     </>

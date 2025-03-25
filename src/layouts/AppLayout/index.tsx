@@ -1,4 +1,6 @@
+import {Suspense} from 'react'
 import {NavLink, Outlet} from 'react-router'
+import {Loader} from '../../components/Loader'
 
 export function AppLayout() {
   return (
@@ -31,7 +33,9 @@ export function AppLayout() {
       </header>
       <main>
         <div className="max-width-wrapper py-6">
-          <Outlet />
+          <Suspense fallback={<Loader />}>
+            <Outlet />
+          </Suspense>
         </div>
       </main>
     </>

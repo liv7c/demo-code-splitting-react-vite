@@ -1,3 +1,4 @@
+import {FancyAnimation} from '../components/FancyAnimation'
 import {Modal} from '../components/Modal'
 
 function About() {
@@ -27,7 +28,8 @@ function About() {
           title="Check out our latest features"
           triggerText="Check out our latest features"
         >
-          <div className="space-y-5 py-10">
+          <div className="space-y-5 pt-10 pb-20">
+            <FancyAnimation />
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
               quaerat cupiditate tempora dignissimos soluta. Non assumenda,

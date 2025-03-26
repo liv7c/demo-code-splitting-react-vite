@@ -1,19 +1,30 @@
 import {usePrefersReducedMotion} from '../../hooks/usePrefersReducedMotion'
-import {lazy, Suspense} from 'react'
-import easterBunnyAnimation from './easter_bunny_anim.json'
+import {lazy, Suspense, use} from 'react'
 
 const LottiePlayer = lazy(() => import('lottie-react'))
+const animationPromise = import('./easter_bunny_anim.json').then(
+  (data) => data.default
+)
 
-export const FancyAnimation = () => {
+const AnimationContent = () => {
   const prefersReducedMotion = usePrefersReducedMotion()
+  const animationData = use(animationPromise)
 
   return (
-    <Suspense fallback={<div className="h-[450px]">...</div>}>
-      <LottiePlayer
-        animationData={easterBunnyAnimation}
-        loop={false}
-        autoplay={!prefersReducedMotion}
-      />
-    </Suspense>
+    <LottiePlayer
+      animationData={animationData}
+      loop={false}
+      autoplay={!prefersReducedMotion}
+    />
+  )
+}
+
+export const FancyAnimation = () => {
+  return (
+    <div className="min-h-[450px]">
+      <Suspense fallback={null}>
+        <AnimationContent />
+      </Suspense>
+    </div>
   )
 }
